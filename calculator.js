@@ -4,6 +4,7 @@
 // perform the operation
 // display the result of the operation 
 
+// eslint-disable-next-line no-undef
 const readline = require('readline-sync');
 
 function prompt(msg) {
