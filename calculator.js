@@ -5,6 +5,9 @@
 // display the result of the operation
 
 // eslint-disable-next-line no-undef
+
+const MESSAGES = require('./calculator_messages.json')
+
 const readline = require('readline-sync');
 
 function prompt(msg) {
@@ -15,27 +18,27 @@ function invalidNumber(num) {
 	return num.trimStart() === '' || Number.isNaN(Number(num));
 }
 
-prompt('Welcome to the Calculator!');
+prompt(MESSAGES['welcome']);
 
 while (true) {
-	prompt('What is the first number?');
+	prompt(MESSAGES['number1']);
 	let number1 = readline.question();
 
 	while (invalidNumber(number1)) {
-		prompt('Hmm... that doesn\'t look like a valid number.');
+		prompt(MESSAGES['invalidNumber']);
 		number1 = readline.question();
 	}
 
-	prompt('What is the second number?');
+	prompt(MESSAGES['number2']);
 	let number2 = readline.question();
 
 	while (invalidNumber(number2)) {
-		prompt('Hmm... that doesn\'t look like a valid number.');
+		prompt(MESSAGES['invalidNumber']);
 		number2 = readline.question();
 	}
 
 	prompt(
-		'What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide'
+		MESSAGES['performOperation']
 	);
 	let operation = readline.question();
 
@@ -63,7 +66,7 @@ while (true) {
 
 	console.log(`The result is ${output}`);
 
-	prompt('Would you like to perform another operation? (y/n)');
+	prompt(MESSAGES['operationAgain']);
 	let answer = readline.question();
 
 	if (answer[0].toLowerCase() !== 'y') break;

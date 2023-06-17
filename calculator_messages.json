@@ -1,0 +1,10 @@
+{
+    "welcome": "Welcome to Gurpreet's Amazing Calculator.",
+    "validName": "Make sure to enter a valid name.",
+    "number1": "What is your first number you would like to enter?",
+    "number2": "What is the second number you would like to enter?",
+    "invalidNumber": "Hmm... that does not look like a valid number. Try Again.",
+    "performOperation": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+    "operationAgain": "Would you like to perform another operation? (y/n)"
+}
+
