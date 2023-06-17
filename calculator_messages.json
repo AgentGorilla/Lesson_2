@@ -5,6 +5,7 @@
     "number2": "What is the second number you would like to enter?",
     "invalidNumber": "Hmm... that does not look like a valid number. Try Again.",
     "performOperation": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
-    "operationAgain": "Would you like to perform another operation? (y/n)"
+    "operationAgain": "Would you like to perform another operation? (y/n)",
+    "mustPerformOperation": "'Must choose 1, 2, 3, or 4'"
 }
 

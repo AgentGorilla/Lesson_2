@@ -43,7 +43,7 @@ while (true) {
 	let operation = readline.question();
 
 	while (!['1', '2', '3', '4'].includes(operation)) {
-		prompt('Must choose 1, 2, 3, or 4');
+		prompt(MESSAGES['mustPerformOperation']);
 		operation = readline.question();
 	}
 
