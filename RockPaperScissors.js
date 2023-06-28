@@ -1,6 +1,9 @@
 const readline = require('readline-sync');
 VALID_CHOICES=['rock', 'paper', 'scissors'];
-
+// add Lizard & Spock
+// Lizard beats Spock
+// Rock beats lizard 
+// 
 function prompt(msg) {
 	console.log(`=> ${msg}`);
 }
