@@ -1,9 +1,6 @@
 const readline = require('readline-sync');
 VALID_CHOICES=['rock', 'paper', 'scissors', 'lizard', 'spock'];
-// add Lizard & Spock
-// Lizard beats Spock
-// Rock beats lizard 
-// 
+
 function prompt(msg) {
 	console.log(`=> ${msg}`);
 }
@@ -20,7 +17,7 @@ while(true){
 	let computerChoice = VALID_CHOICES[randomIndex];
 
 	prompt(`You chose ${choice}. Computer chose ${computerChoice}`);
-// copy + paste first block into computer block /then switch the two conditions ex. rock & paper -> paper & rock
+
 	if ((choice === 'rock' && computerChoice === 'scissors') ||
     (choice === 'scissors' && computerChoice === 'paper') ||
     (choice === 'paper' && computerChoice === 'rock') ||
@@ -33,11 +30,13 @@ while(true){
 		(choice === 'scissors' && computerChoice === 'lizard')) {
 		prompt('You win');
 	} else if ((choice === 'scissors' && computerChoice === 'rock') ||
-    (choice === 'paper' && computerChoice === 'scissors') ||
-    (choice === 'rock' && computerChoice === 'paper') ||
+		(choice === 'paper' && computerChoice === 'scissors') ||
+		(choice === 'rock' && computerChoice === 'paper') ||
 		(choice === 'paper' && computerChoice === 'lizard') ||
+		(choice === 'scissors' && computerChoice ==='spock') ||
+		(choice === 'spock' && computerChoice === 'lizard') ||
 		(choice === 'rock' && computerChoice === 'spock') ||
-		(choice === 'scissors' && computerChoice === 'spock') ||
+		(choice === 'spock' && computerChoice === 'paper') ||
 		(choice === 'lizard' && computerChoice === 'rock') ||
 		(choice === 'lizard' && computerChoice === 'scissors')) {
 		prompt('Computer Wins');
