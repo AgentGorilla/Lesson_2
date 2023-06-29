@@ -11,6 +11,7 @@ function invalidNumber(num) {
 }
 
 while (true) {
+	
 	prompt(MORTGAGE_MESSAGES['welcomeMessage']);
 	readline.question();
 
@@ -18,8 +19,12 @@ while (true) {
 	readline.question();
 
 	prompt(MORTGAGE_MESSAGES['userNameInput']);
-	
 	let userName = readline.question();
+
+	while (userName.trim() === '') {
+		prompt(MORTGAGE_MESSAGES['invalidName']);
+		userName = readline.question();
+	}
 	
 	prompt(`They call you that? Alright ${userName}.\n ${MORTGAGE_MESSAGES['loanAmountResponse']}`);
 	let loanAmount = readline.question();
@@ -38,19 +43,22 @@ while (true) {
 	}
 
 	prompt(MORTGAGE_MESSAGES['aprResponse']);
-	let apr = readline.question();
-	let monthlyInterestRate = apr / Number(12);
-
-	while (invalidNumber(apr)) {
+	let interestRate = readline.question();
+	
+	while (invalidNumber(interestRate)) {
 		prompt(MORTGAGE_MESSAGES['invalidNumberApr']);
-		apr = readline.question();
-		monthlyInterestRate = apr / Number(12);
+		interestRate = readline.question();
 	}
 
-	let monthlyPayment = Number(loanAmount) * (Number(monthlyInterestRate) / (1 - Math.pow((1 + Number(monthlyInterestRate)), (-Number(loanDuration)))));
+	let loanDurationMonthToYear = loanDuration * 12;
+	let annualInterestRate = Number(interestRate) / 100;
+	let monthlyInterestRate = annualInterestRate / Number(12);
 	
-	prompt(`${MORTGAGE_MESSAGES['output']} ${monthlyPayment}` );
-    
+
+	let monthlyPayment = Number(loanAmount) * (Number(monthlyInterestRate) / (1 - Math.pow((1 + Number(monthlyInterestRate)), (-Number(loanDurationMonthToYear)))));
+	
+	prompt(`${MORTGAGE_MESSAGES['output']} ${monthlyPayment.toFixed(2)}` );
+
 	prompt(MORTGAGE_MESSAGES['reCalculate']);
 	let answer = readline.question();
 	if (answer[0].toLowerCase() !== 'y') break;
