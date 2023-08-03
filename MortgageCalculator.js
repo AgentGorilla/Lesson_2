@@ -66,7 +66,3 @@ while (true) {
 
 
 
-// let monthlyPayment = Number(loanAmount) + Number(apr) + Number(loanDuration)
-
-
-
